@@ -75,8 +75,11 @@ namespace WPF.PdfViewer
         private void PrintLoadedPDF(object sender, RoutedEventArgs e)
         {
             PrintDialog dialog = new PrintDialog();
-
-            dialog.ShowDialog();
+            //Print the PDF document
+            if (documentViewer.LoadedDocument != null)
+                documentViewer.Print();
+            else MessageBox.Show("Please load the PDF file");
+            //dialog.ShowDialog();
         }
 
     }
