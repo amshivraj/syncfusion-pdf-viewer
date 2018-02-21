@@ -30,7 +30,7 @@ namespace WPF.PdfViewer.ViewModels
 
                     //});
 
-                    foreach (PdfPageBase pageT in pages.AsParallel())
+                    foreach (PdfPageBase pageT in pages)
                     {
                         PdfPageBase page = pageT;
                         extractedText.Append(page.ExtractText());
