@@ -58,10 +58,12 @@ namespace WPF.PdfViewer
 
             {
                 //PdfDocumentView documentViewer = new PdfDocumentView();
+                 if (documentViewer.LoadedDocument != null)
+                    documentViewer.Unload();
+                    
                 PdfLoadedDocument loadedDocument = new PdfLoadedDocument(dialog.FileName);
                 PdfLoadedPageCollection pages = loadedDocument.Pages;
-
-                documentViewer.ZoomMode = ZoomMode.FitWidth;
+                documentViewer.ZoomMode = ZoomMode.FitWidth;                
                 documentViewer.LoadAsync(loadedDocument);
 
                 //Task.Run(() => GeneratePDFReport(pages));
